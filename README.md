@@ -27,3 +27,59 @@ Ce projet exploite des offres d’emploi pour :
 ---
 
 ## 🧠 Architecture (schéma)
+TEXT DATA (job offers)
+│
+▼
+NLP Pipeline (clean → NER → embeddings → classification)
+│ │
+▼ ▼
+jobs table skills list
+\ /
+\ /
+▼ ▼
+Knowledge Graph (Jobs–Skills–Companies)
+│
+GNN / community detection
+│
+Recommendations / Graph-RAG Q&A
+│
+CV Adaptation Module (suggestions, rewrite)
+
+---
+
+## 🔧 Structure du repo (recommandée)
+cv-intelligent-nlp-graph-learning/
+├── src/
+│ ├── data_processing/
+│ ├── nlp/
+│ ├── graph/
+│ ├── gnn/
+│ ├── rag/
+│ ├── cv_adaptation/
+│ └── api/
+├── requirements.txt
+├── .gitignore
+├── README.md
+└── .env.example
+
+yaml
+Copier le code
+
+---
+
+## ⚙️ Installation rapide
+
+> Utilise Python 3.10+
+
+```bash
+git clone https://github.com/sarra2003/cv-intelligent-nlp-graph-learning.git
+cd cv-intelligent-nlp-graph-learning
+python -m venv .venv
+# Windows
+.venv\Scripts\activate
+# mac/linux
+# source .venv/bin/activate
+pip install --upgrade pip
+pip install -r requirements.txt
+ Lien dataset : https://huggingface.co/datasets/lukebarousse/data_jobs
+
